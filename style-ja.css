@@ -1,0 +1,23 @@
+.page-container main .japan_chartbox {
+    background-color: #2c3b4d;
+    margin: .1rem;
+}
+
+.lang-other_contents {
+    background: none !important;
+    padding: 0px !important;
+}
+
+.lang-other_contents .cont-border {
+    background: #fff;
+    border: 0px !important;
+    padding: 0px !important;
+}
+
+.inner {
+    max-width: 100% !important;
+    margin: 0 auto;
+    padding: 0 !important;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}

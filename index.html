@@ -1,0 +1,310 @@
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://corona.go.jp/assets/css/other-lang.css?202105201700">
+<script src="https://corona.go.jp/assets/js/common.js?202105201700" defer=""></script>
+<script src="https://corona.go.jp/assets/js/jquery.magnific-popup.min.js" defer=""></script>
+<script src="https://corona.go.jp/assets/js/popup-base.js?202008041746" defer=""></script>
+<!-- code vn -->
+<div id="menu">
+    <div id="menu-data">
+        <div class="data-style">
+            <div class="data-name">
+                <div class="name-title">新型コロナウイルス感染症</div>
+                <div class="name-date1"></div>
+            </div>
+            <div class="data-list">
+                <div class="list-style">
+                    <div class="list-data sum">
+                        <div id="infected"></div>
+                    </div>
+                    <div class="list-name sum">合計</div>
+                </div>
+                <div class="list-style">
+                    <div class="list-data">
+                        <div id="treated"></div>
+                        <div class="sosanh">(
+                            <div id="scnm"></div> )
+                        </div>
+                    </div>
+                    <div class="list-name">新型感染</div>
+                </div>
+                <div class="list-style">
+                    <div class="list-data">
+                        <div id="nmoihqua"></div>
+                    </div>
+                    <div class="list-name">昨日</div>
+                </div>
+            </div>
+        </div>
+        <div class="data-style">
+            <div class="data-name">
+                <div class="name-title">退院治療等</div>
+                <div class="name-date2"></div>
+            </div>
+            <div class="data-list">
+                <div class="list-style">
+                    <div class="list-data sum">
+                        <div id="recovered"></div>
+                    </div>
+                    <div class="list-name sum">合計</div>
+                </div>
+                <div class="list-style">
+                    <div class="list-data">
+                        <div id="cakhoimoi"></div>
+                        <div class="sosanh">(
+                            <div id="sckm"></div> )
+                        </div>
+                    </div>
+                    <div class="list-name">新型退院</div>
+                </div>
+                <div class="list-style">
+                    <div class="list-data">
+                        <div id="cakhoihqua"></div>
+                    </div>
+                    <div class="list-name">昨日</div>
+                </div>
+            </div>
+        </div>
+        <div class="data-style">
+            <div class="data-name">
+                <div class="name-title">死亡者数</div>
+                <div class="name-date3"></div>
+            </div>
+            <div class="data-list">
+                <div class="list-style">
+                    <div class="list-data sum">
+                        <div id="deceased"></div>
+                    </div>
+                    <div class="list-name sum">合計</div>
+                </div>
+                <div class="list-style">
+                    <div class="list-data">
+                        <div id="chetmoi"></div>
+                        <div class="sosanh">(
+                            <div id="sccm"></div>)
+                        </div>
+                    </div>
+                    <div class="list-name">新型死亡</div>
+                </div>
+                <div class="list-style">
+                    <div class="list-data">
+                        <div id="chethqua"></div>
+                    </div>
+                    <div class="list-name">昨日</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="information__container">
+            <div class="information__data socanhiem">
+                <p>SỐ CA NHIỄM</p>
+                <h3 id="infected"></h3>
+            </div>
+            <div class="information__data dangdieutri">
+                <p>ĐANG ĐIỀU TRỊ</p>
+                <h3 id="treated"></h3>
+            </div>
+            <div class="information__data khoi">
+                <p>KHỎI</p>
+                <span id="recovered"></span>
+            </div>
+            <div class="information__data tuvong">
+                <p>TỬ VONG</p>
+                <h3 id="deceased"></h3>
+            </div>
+        </div>
+        <div class="section">
+            <div id="map">
+                <div class="data-name map-name">
+                    <div class="name-title">新型コロナウイルス感染症</div>
+                    <div class="name-date4"></div>
+                </div>
+            </div>
+            <div class="table">
+                <table id="table">
+                    <tr>
+                    </tr>
+                </table>
+            </div>
+            <div class="table">
+                <table id="table1">
+                    <tr>
+                    </tr>
+                </table>
+            </div>
+            <div class="table">
+                <table id="table2">
+                    <tr>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="chart__container">
+            <div class="chart__data">
+                <canvas id="nhiemChart" class="chart"></canvas>
+            </div>
+            <div class="chart__data">
+                <canvas id="khoiChart" class="chart"></canvas>
+            </div>
+            <div class="chart__data">
+                <canvas id="tuvongChart" class="chart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- code vn -->
+
+<!-- code japan -->
+<div class="page-container">
+    <main>
+        <article class="lang-other_contents is-load">
+            <div class="inner">
+                <section class="cont-border pad0">
+                    <div class="dashboard_japanchart" id="japanchart">
+                        <div class="inner grid_container">
+                            <!-- bang ca nuoc -->
+                            <div class="container japan_chartbox japan_chartbox-1">
+                                <div class="japan_chartbox-title-grid">
+                                    <div class="japan_chartbox-title-grid-title">新型コロナウイルス感染症</div>
+                                    <div class="japan_chartbox-title-grid-date" id="japanchart_patients-date">今日</div>
+                                </div>
+                                <div class="japanchartbox-label-grid">
+                                    <div class="japanchartbox_grid-accumulation">
+                                        <p class="japanchartbox-bigLabel " id="patients-accumulation"></p>
+                                        <p class="japanchartbox-smallLabel ">合計</p>
+                                    </div>
+                                    <div class="japanchartbox_grid-new">
+                                        <p class="japanchartbox-bigLabel" id="patients-new"></p>
+                                        <p class="japanchartbox-smallLabel">新感染症</p>
+                                    </div>
+                                    <div class="japanchartbox_grid-predayNew">
+                                        <p class="japanchartbox-bigLabel" id="patients-predayNew"></p>
+                                        <p class="japanchartbox-smallLabel">昨日</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--  bang so nguoi chet -->
+                            <div class="container japan_chartbox japan_chartbox-3">
+                                <div class="japan_chartbox-title-grid">
+                                    <div class="japan_chartbox-title-grid-title">死亡者数</div>
+                                    <div class="japan_chartbox-title-grid-date" id="japanchart_deaths-date">今日</div>
+                                </div>
+                                <div class="japanchartbox-label-grid">
+                                    <div class="japanchartbox_grid-accumulation">
+                                        <p class="japanchartbox-bigLabel " id="deaths-accumulation"></p>
+                                        <p class="japanchartbox-smallLabel ">合計</p>
+                                    </div>
+                                    <div class="japanchartbox_grid-new">
+                                        <p class="japanchartbox-bigLabel" id="deaths-new"></p>
+                                        <p class="japanchartbox-smallLabel">死亡者</p>
+                                    </div>
+                                    <div class="japanchartbox_grid-predayNew">
+                                        <p class="japanchartbox-bigLabel" id="deaths-predayNew">+11</p>
+                                        <p class="japanchartbox-smallLabel">昨日</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- chart -->
+                            <div class="container japan_chartbox japan_chartbox-2">
+                                <div class="japan_chartbox-title-grid">
+                                    <div class="japan_chartbox-title-grid-title">入院治療等</div>
+                                    <div class="japan_chartbox-title-grid-date" id="japanchart_cures-date"></div>
+                                </div>
+
+                                <div class="japanchartbox-label-grid">
+                                    <div class="japanchartbox_grid-accumulation">
+                                        <p class="japanchartbox-bigLabel " id="cures-accumulation"></p>
+                                        <p class="japanchartbox-smallLabel ">合計</p>
+                                    </div>
+                                    <div class="japanchartbox_grid-new">
+                                        <p class="japanchartbox-bigLabel" id="cures-new"></p>
+                                        <p class="japanchartbox-smallLabel">入院治療</p>
+                                    </div>
+                                    <div class="japanchartbox_grid-predayNew">
+                                        <p class="japanchartbox-bigLabel" id="cures-predayNew"></p>
+                                        <p class="japanchartbox-smallLabel">昨日</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- map -->
+                            <div class="container japan_chartbox japan_chartbox-4">
+                                <div class="japan_chartbox-title-grid">
+                                    <div class="japan_chartbox-title-grid-title">都道府県別累積の陽性者</div>
+                                    <div class="japan_chartbox-title-grid-date" id="japanchart_map-date"></div>
+                                </div>
+                                <div id="map-container">
+                                </div>
+                            </div>
+                            <!-- maps -->
+
+                            <!-- bang cac tinh -->
+                            <div class="japan_chartbox japan_chartbox-5 grid_container_japanmapchart">
+                                <div class="container grid_container_japanmapchart-col grid_container_japanmapchart-col-1">
+                                    <div class="chartjs-size-monitor">
+                                        <div class="chartjs-size-monitor-expand">
+                                            <div class=""></div>
+                                        </div>
+                                        <div class="chartjs-size-monitor-shrink">
+                                            <div class=""></div>
+                                        </div>
+                                    </div>
+                                    <canvas id="canvas-0" class="chartjs-render-monitor"></canvas>
+                                </div>
+                                <div class="container grid_container_japanmapchart-col grid_container_japanmapchart-col-2">
+                                    <div class="chartjs-size-monitor">
+                                        <div class="chartjs-size-monitor-expand">
+                                            <div class=""></div>
+                                        </div>
+                                        <div class="chartjs-size-monitor-shrink">
+                                            <div class=""></div>
+                                        </div>
+                                    </div>
+                                    <canvas id="canvas-1" class="chartjs-render-monitor"></canvas>
+                                </div>
+                                <div class="container grid_container_japanmapchart-col grid_container_japanmapchart-col-3">
+                                    <div class="chartjs-size-monitor">
+                                        <div class="chartjs-size-monitor-expand">
+                                            <div class=""></div>
+                                        </div>
+                                        <div class="chartjs-size-monitor-shrink">
+                                            <div class=""></div>
+                                        </div>
+                                    </div>
+                                    <canvas id="canvas-2" class="chartjs-render-monitor"></canvas>
+                                </div>
+                                <div class="container grid_container_japanmapchart-col grid_container_japanmapchart-col-4">
+                                    <div class="chartjs-size-monitor">
+                                        <div class="chartjs-size-monitor-expand">
+                                            <div class=""></div>
+                                        </div>
+                                        <div class="chartjs-size-monitor-shrink">
+                                            <div class=""></div>
+                                        </div>
+                                    </div>
+                                    <canvas id="canvas-3" class="chartjs-render-monitor"></canvas>
+                                </div>
+                            </div>
+                            <!-- chart -->
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+        </article>
+
+    </main>
+</div>
+<link rel="stylesheet" href="https://corona.go.jp/dashboard/css/app.css">
+<script src="https://corona.go.jp/dashboard/js/app.js"></script>
+<!-- code japan -->
+
+
+<!-- === SCRIPT CHART JS === -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<link rel="stylesheet" href="style.css">
+
+<!-- === SCRIPT MAIN JS === -->
+<script src="./main.js"></script>
+<script src="mapdata.js"></script>
+<script src="countrymap.js"></script>
